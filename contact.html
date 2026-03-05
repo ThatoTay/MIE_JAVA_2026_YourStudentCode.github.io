@@ -14,7 +14,8 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../First program/c">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
     <meta charset="utf-8" />
@@ -30,39 +31,6 @@
 </head>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-<script>
-    (function(){
-    emailjs.init("gZvLg1KVdVGpUfaHg");
-    })();
-     
-    document.addEventListener("DOMContentLoaded", function(){
-        const form = document.getElementById("contact-form")
-
-            form.addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            emailjs.sendForm("service_dnfg0wn","template_uwkd49r", this)
-           .then(function() {
-
-                let popup = document.getElementById("thankyou_message");
-                popup.style.display = "block";
-
-                setTimeout(function(){
-                    popup.style.display = "none";
-                },5000);
-
-                document.getElementById("contact-form").reset();
-
-                }, function(error) {
-                alert("Failed to send message.");
-                });
-            
-        });
-
-    });
-
-</script>
 
 <body id="contact-body" style="overflow-x: hidden;">
     <div>
@@ -154,5 +122,6 @@
         </div>
     </div>
 </body>
+<script src="../js/app.js"></script>
 
 </html>

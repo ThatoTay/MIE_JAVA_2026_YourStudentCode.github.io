@@ -136,3 +136,35 @@
     document.addEventListener('DOMContentLoaded', init);
 
 })(document.createElement('canvas'));
+
+
+
+ (function(){
+    emailjs.init("gZvLg1KVdVGpUfaHg");
+    })();
+     
+    document.addEventListener("DOMContentLoaded", function(){
+        const form = document.getElementById("contact-form")
+
+            form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            emailjs.sendForm("service_dnfg0wn","template_uwkd49r", this)
+           .then(function() {
+
+                let popup = document.getElementById("thankyou_message");
+                popup.style.display = "block";
+
+                setTimeout(function(){
+                    popup.style.display = "none";
+                },5000);
+
+                document.getElementById("contact-form").reset();
+
+                }, function(error) {
+                alert("Failed to send message.");
+                });
+            
+        });
+
+    });
